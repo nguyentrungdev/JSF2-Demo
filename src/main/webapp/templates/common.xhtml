@@ -3,30 +3,22 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets">
 	<h:head>
-	<!-- Main CSS  -->
-	<h:outputStylesheet library="css" name="/resources/css/styles.css"  /> 
+		<!-- Main CSS  -->
 	</h:head>
 	<h:body>
+	<h:outputStylesheet library="theme1" name="css/style.css" />
 	<div id="wrapper">
-		<div>
-			<ui:insert name="header" >
-				<ui:include src="/templates/header.xhtml" />
-			</ui:insert>
-		</div>
+		<ui:insert name="header" >
+			<ui:include src="/templates/header.xhtml" />
+		</ui:insert>
 		<br/>
-		<div>
-			<ui:insert name="content">
-				<ui:include src="/templates/content.xhtml">
-				  <!-- <ui:param name="page" value="#{page}" />  -->
-				</ui:include>
-			</ui:insert>
-		</div>
+		<ui:insert name="content">
+			<ui:include src="/templates/content.xhtml" />
+		</ui:insert>
 		<br/>
-		<div>
-			<ui:insert name="footer">
-				<ui:include src="/templates/footer.xhtml" />
-			</ui:insert>
-		</div>
+		<ui:insert name="footer">
+			<ui:include src="/templates/footer.xhtml" />
+		</ui:insert>
 	</div>
 	</h:body>
 </html>
