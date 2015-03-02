@@ -8,7 +8,7 @@
 <h:head>
     <script>
         function check(){
-            var message = document.getElementById("form:input");
+            var message = document.getElementById("myForm:input");
             if(confirm("Are you sure sending message "+ message.value + " !")){
                 return true;
             }
@@ -19,10 +19,10 @@
 <h:body>
     <h:form id="myForm">
         <h1>
-            <h:outputText value="JavaBeat JSF 2.2 Examples" />
+            <h:outputText value="ManagedBean example" />
         </h1>
         <h2>
-            <h:outputText value="JSF2 Form Example" />
+            <h:outputText value="Form example" />
         </h2>
         <h:outputText value="Enter applicant email subject : " />
         <h:inputText id="input" value="#{applicantEmail.subject}" />

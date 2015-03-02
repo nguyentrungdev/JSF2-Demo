@@ -1,16 +1,16 @@
 package com.aavn.primefaces;
 
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.RequestScoped;
 import javax.faces.bean.SessionScoped;
+import javax.faces.bean.ViewScoped;
 
-@ManagedBean(name = "applicantEmail", eager = true)
-@SessionScoped
+@ManagedBean(name = "applicantEmail")
+@RequestScoped
 public class ApplicantEmailController {
 	private int id;
 	private String subject;
 	private String applicantName;
-	
-	private String outcome = "form";
 	
 	public String getHelloWorld() {
 		return "Xin chào thế giới!";
@@ -35,13 +35,8 @@ public class ApplicantEmailController {
 	}
 	
 	public String action() {
-		return "Your subject: " + this.subject;
-	}
-	public String getOutcome() {
-		return outcome;
-	}
-	public void setOutcome(String outcome) {
-		this.outcome = outcome;
+		this.subject = "Your subject: " + this.subject;
+		return "";
 	}
 	
 }

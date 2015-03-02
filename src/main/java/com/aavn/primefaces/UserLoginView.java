@@ -1,6 +1,7 @@
 package com.aavn.primefaces;
 
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.NoneScoped;
 import javax.faces.bean.SessionScoped;
 import javax.faces.event.ActionEvent;
 
