@@ -1,5 +1,7 @@
 package com.aavn.primefaces;
 
+import java.io.Serializable;
+
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.NoneScoped;
 import javax.faces.bean.RequestScoped;
@@ -8,8 +10,13 @@ import javax.faces.bean.ViewScoped;
 import javax.faces.event.ActionEvent;
 
 @ManagedBean(eager=true)
-@ViewScoped
-public class Calculator {
+@SessionScoped
+
+public class Calculator implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private double result;
 
 	public double getResult() {
