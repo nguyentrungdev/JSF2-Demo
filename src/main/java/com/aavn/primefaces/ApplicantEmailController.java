@@ -13,7 +13,7 @@ public class ApplicantEmailController {
 	private String applicantName;
 	
 	public String getHelloWorld() {
-		return "Xin chào thế giới!";
+		return "Hello world!";
 	}
 	public int getId() {
 		return id;
@@ -39,4 +39,7 @@ public class ApplicantEmailController {
 		return "";
 	}
 	
+	public ApplicantEmailController() {
+		System.out.println("$$$$$$$$$$$$$$$$$$$$$$$-New ApplicantionEmailController-$$$$$$$$$$$$$$$$$$$$$$$$$$$");
+	}
 }

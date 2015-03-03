@@ -27,4 +27,7 @@ public class Calculator {
 		}
 	}
 	
+	public Calculator() {
+		System.out.println("$$$$$$$$$$$$$$$$-new Calculator-$$$$$$$$$$$$$$$$");
+	}
 }
