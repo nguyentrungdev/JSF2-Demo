@@ -9,9 +9,8 @@ import javax.faces.bean.SessionScoped;
 import javax.faces.bean.ViewScoped;
 import javax.faces.event.ActionEvent;
 
-@ManagedBean(eager=true)
-@SessionScoped
-
+@ManagedBean
+@ViewScoped
 public class Calculator implements Serializable {
 	/**
 	 * 

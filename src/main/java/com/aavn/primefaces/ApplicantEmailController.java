@@ -1,13 +1,19 @@
 package com.aavn.primefaces;
 
+import java.io.Serializable;
+
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 import javax.faces.bean.SessionScoped;
 import javax.faces.bean.ViewScoped;
 
-@ManagedBean(name = "applicantEmail")
-@RequestScoped
-public class ApplicantEmailController {
+@ManagedBean(name = "applicantEmail", eager = true)
+@SessionScoped
+public class ApplicantEmailController implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private int id;
 	private String subject;
 	private String applicantName;
