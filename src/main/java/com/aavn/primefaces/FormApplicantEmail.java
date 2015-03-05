@@ -19,7 +19,6 @@ public class FormApplicantEmail implements Serializable{
 	private ApplicantEmail applicantEmail;
 	
 	public FormApplicantEmail() {
-		applicantEmail = new ApplicantEmail();
 		this.initialize();
 	}
 	
@@ -27,7 +26,8 @@ public class FormApplicantEmail implements Serializable{
 		String id = FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap().get( "id" );
         if (id != null) {
         	applicantEmail.setId(Integer.parseInt(id));
-        }
+        } else 
+        	applicantEmail = new ApplicantEmail();
 	}
 
 	public ApplicantEmail getApplicantEmail() {
