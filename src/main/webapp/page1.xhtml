@@ -1,19 +1,33 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:ui="http://java.sun.com/jsf/facelets">
-	<h:body>
-		<ui:composition template="templates/common.xhtml">
-			<ui:param name="page" value="Page 1" />
-			<ui:define name="content">
-				<h:form>
-					<h:commandButton action="page2" value="Page 2" /> 
-				</h:form>
-				
-				<h:link value="Page 1" outcome="page1" /> <br />
-		        
-		        <h:link value="Page 2" outcome="page2" />			
-			</ui:define>
-		</ui:composition>
-	</h:body>
+	    xmlns:ui="http://java.sun.com/jsf/facelets"
+	    xmlns:h="http://java.sun.com/jsf/html"
+	    xmlns:f="http://java.sun.com/jsf/core"
+	    xmlns:c="http://java.sun.com/jsp/jstl/core">
+<h:head>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+	<ui:remove><!--  JQuery UI --> </ui:remove>
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/themes/smoothness/jquery-ui.css" />
+</h:head>
+<h:body>
+	<ui:composition template="templates/common.xhtml">
+		<ui:param name="page" value="Page 1" />
+		<ui:define name="content">
+			<h:form id="myForm">
+		    	<c:set var="form" value="formApplicantEmail" />
+		        <h1>
+		            <h:outputText value="ManagedBean example" ng-model="abc"/>
+		        </h1>
+		        <h2>
+		            <h:outputText value="Form example" />
+		        </h2>
+		        <h:outputText value="Enter applicant email subject : " />
+		        <h:inputText id="input" value="#{formApplicantEmail.applicantEmail.subject}" ng-model="bcd" />
+		        <h:commandButton value="Submit" action="#{formApplicantEmail.action}" />
+		        <h:outputText value="#{formApplicantEmail.applicantEmail.subject}"/>
+		    </h:form>		
+		</ui:define>
+	</ui:composition>
+</h:body>
 </html>

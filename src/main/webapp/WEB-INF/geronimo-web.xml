@@ -1,0 +1,23 @@
+<web-app xmlns="http://geronimo.apache.org/xml/ns/j2ee/web-2.0" 
+        xmlns:dep="http://geronimo.apache.org/xml/ns/deployment-1.2"
+        xmlns:nam="http://geronimo.apache.org/xml/ns/naming-1.2"
+        xmlns:sec="http://geronimo.apache.org/xml/ns/security-2.0"
+         xmlns:sys="http://geronimo.apache.org/xml/ns/deployment-1.2" >
+
+     <sys:environment>
+        <sys:moduleId>
+            <sys:groupId>com.aavn</sys:groupId>
+            <sys:artifactId>primefaces</sys:artifactId>
+            <sys:version>1.0.0</sys:version>
+            <sys:type>car</sys:type>
+        </sys:moduleId>
+        <sys:dependencies>
+        </sys:dependencies>
+        <sys:import-package>!org.apache.commons.logging.*</sys:import-package>
+        <sys:import-package>!javax.faces*</sys:import-package>
+        <sys:import-package>!org.apache.myfaces*</sys:import-package>
+
+    </sys:environment>
+    
+    <context-root>/jsf2</context-root>
+</web-app>

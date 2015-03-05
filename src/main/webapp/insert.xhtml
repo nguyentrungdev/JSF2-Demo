@@ -6,18 +6,10 @@
 	    xmlns:c="http://java.sun.com/jsp/jstl/core">
 	
 <h:head>
-    <script>
-        function check(){
-            var message = document.getElementById("myForm:input");
-            if(confirm("Are you sure sending message "+ message.value + " !")){
-                return true;
-            }
-            return false;
-        }
-    </script>
 </h:head>
 <h:body>
     <h:form id="myForm">
+    	<c:set var="form" value="formApplicantEmail" />
         <h1>
             <h:outputText value="ManagedBean example" ng-model="abc"/>
         </h1>
@@ -25,9 +17,9 @@
             <h:outputText value="Form example" />
         </h2>
         <h:outputText value="Enter applicant email subject : " />
-        <h:inputText id="input" value="#{applicantEmail.subject}" />
-        <h:commandButton value="Submit" action="#{applicantEmail.action}" onclick="return check();"/>
-        <h:outputText value="#{applicantEmail.subject}"/>
+        <h:inputText id="input" value="#{formApplicantEmail.applicantEmail.subject}" ng-model="bcd" />
+        <h:commandButton value="Submit" action="#{formApplicantEmail.action}" />
+        <h:outputText value="#{formApplicantEmail.applicantEmail.subject}"/>
     </h:form>
 </h:body>
 </html>

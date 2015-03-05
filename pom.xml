@@ -45,4 +45,18 @@
 			</plugin>
 		</plugins>
 	</build>
+	<profiles>
+		<profile>
+			<id>jsf2-demo</id> <!-- Used in “Execute shell” ! NOTE  -->
+			<build>
+				<finalName>JSF2-Demo-War</finalName> <!-- .war file name -->
+			</build>
+			<properties>
+				<app.contextRoot>/jsf2-pom</app.contextRoot>
+				<app.artifactId>jsf2</app.artifactId>
+				<app.state>Development</app.state>
+				<app.environment>Development</app.environment>
+			</properties>
+		</profile>
+	</profiles>
 </project>

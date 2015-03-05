@@ -7,7 +7,7 @@ import javax.faces.bean.RequestScoped;
 import javax.faces.bean.SessionScoped;
 import javax.faces.bean.ViewScoped;
 
-@ManagedBean(name = "applicantEmail", eager = true)
+@ManagedBean(name = "applicantEmailController", eager = true)
 @SessionScoped
 public class ApplicantEmailController implements Serializable {
 	/**
@@ -19,7 +19,7 @@ public class ApplicantEmailController implements Serializable {
 	private String applicantName;
 	
 	public String getHelloWorld() {
-		return "Hello world!";
+		return "Hello world! new jsf 2";
 	}
 	public int getId() {
 		return id;

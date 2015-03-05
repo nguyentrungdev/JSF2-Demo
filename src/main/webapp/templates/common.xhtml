@@ -4,9 +4,11 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets">
 	<h:head>
 		<!-- Main CSS  -->
+		<h:outputStylesheet library="theme1" name="css/style.css" />
+		<h:outputStylesheet value="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
 	</h:head>
 	<h:body>
-	<h:outputStylesheet library="theme1" name="css/style.css" />
+	
 	<div id="wrapper">
 		<ui:insert name="header" >
 			<ui:include src="/templates/header.xhtml" />
