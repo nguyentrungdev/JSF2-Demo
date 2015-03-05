@@ -26,6 +26,11 @@
 		        <h:inputText id="input" value="#{formApplicantEmail.applicantEmail.subject}" ng-model="bcd" />
 		        <h:commandButton value="Submit" action="#{formApplicantEmail.action}" />
 		        <h:outputText value="#{formApplicantEmail.applicantEmail.subject}"/>
+		        
+		        <h:outputLabel value="aaa" for="gender" />
+		        <h:selectOneMenu>
+		        	<f:selectItem></f:selectItem>
+		        </h:selectOneMenu>
 		    </h:form>		
 		</ui:define>
 	</ui:composition>
