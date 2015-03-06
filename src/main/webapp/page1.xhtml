@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
 	    xmlns:ui="http://java.sun.com/jsf/facelets"
@@ -14,23 +15,35 @@
 	<ui:composition template="templates/common.xhtml">
 		<ui:param name="page" value="Page 1" />
 		<ui:define name="content">
-			<h:form id="myForm">
-		    	<c:set var="form" value="formApplicantEmail" />
+			<h:form id="myForm" >
+		    	<c:set var="form" value="formApplicant" />
 		        <h1>
 		            <h:outputText value="ManagedBean example" ng-model="abc"/>
 		        </h1>
 		        <h2>
 		            <h:outputText value="Form example" />
 		        </h2>
-		        <h:outputText value="Enter applicant email subject : " />
-		        <h:inputText id="input" value="#{formApplicantEmail.applicantEmail.subject}" ng-model="bcd" />
-		        <h:commandButton value="Submit" action="#{formApplicantEmail.action}" />
-		        <h:outputText value="#{formApplicantEmail.applicantEmail.subject}"/>
+		        <h:outputText value="First name: " />
+		        <h:inputText id="input" value="#{formApplicant.applicant.firstName}" ng-model="bcd" />
+		       
+		        <h:outputText value="#{formApplicant.applicant.firstName}"/>
 		        
-		        <h:outputLabel value="aaa" for="gender" />
-		        <h:selectOneMenu>
-		        	<f:selectItem></f:selectItem>
+		        
+		        <h:outputLabel value="Gender" for="gender" />
+		        
+		        <h:selectOneMenu id="gender" value="formApplicant.applicant.gender">
+		        	<f:selectItems value="#{formApplicant.genders}" var="gender" itemValue="#{gender.id}" itemLabel="#{gender.label}" />
 		        </h:selectOneMenu>
+		        
+		        <h:outputLabel value="Last name:" />
+		        <h:inputText value="#{formApplicant.applicant.lastName}"/>
+		        
+		        <h:outputLabel value="Email address:" />
+		        <h:inputText value="#{formApplicant.applicant.email}" />
+		        
+		        <h:outputText value="#{formApplicant.applicant.id}" />
+		        <h:commandButton value="Create" action="#{formApplicant.submit}" rendered="#{formApplicant.applicant.id == 0}" />
+		        <h:commandButton value="Update" action="#{formApplicant.submit}" rendered="#{formApplicant.applicant.id != 0}" />
 		    </h:form>		
 		</ui:define>
 	</ui:composition>
