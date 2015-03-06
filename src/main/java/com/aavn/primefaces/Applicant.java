@@ -6,12 +6,14 @@ public class Applicant {
 	private int id;
 	private String firstName;
 	private String lastName;
-	private int gender;
+	private Integer gender;
 	private String email;
-	private Date birthday;
+	private Date dateOfBirth;
 	private String skypeAccount;
 	private String phoneNumber;
-	private int vacancy;
+	private Integer event;
+	private Boolean isFresher;
+	private String major;
 	
 	public int getId() {
 		return id;
@@ -31,10 +33,10 @@ public class Applicant {
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
-	public int getGender() {
+	public Integer getGender() {
 		return gender;
 	}
-	public void setGender(int gender) {
+	public void setGender(Integer gender) {
 		this.gender = gender;
 	}
 	public String getEmail() {
@@ -43,11 +45,11 @@ public class Applicant {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public Date getBirthday() {
-		return birthday;
+	public Date getDateOfBirth() {
+		return dateOfBirth;
 	}
-	public void setBirthday(Date birthday) {
-		this.birthday = birthday;
+	public void setDateOfBirth(Date birthday) {
+		this.dateOfBirth = birthday;
 	}
 	public String getSkypeAccount() {
 		return skypeAccount;
@@ -61,11 +63,12 @@ public class Applicant {
 	public void setPhoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
-	public int getVacancy() {
-		return vacancy;
+	public Integer getEvent() {
+		return event;
 	}
-	public void setVacancy(int vacancy) {
-		this.vacancy = vacancy;
+	public void setEvent(Integer event) {
+		this.event = event;
 	}
+	
 
 }

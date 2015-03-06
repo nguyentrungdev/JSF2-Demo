@@ -6,10 +6,6 @@
 	    xmlns:f="http://java.sun.com/jsf/core"
 	    xmlns:c="http://java.sun.com/jsp/jstl/core">
 <h:head>
-	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
-	<ui:remove><!--  JQuery UI --> </ui:remove>
-	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/themes/smoothness/jquery-ui.css" />
 </h:head>
 <h:body>
 	<ui:composition template="templates/common.xhtml">
@@ -28,7 +24,6 @@
 		       
 		        <h:outputText value="#{formApplicant.applicant.firstName}"/>
 		        
-		        
 		        <h:outputLabel value="Gender" for="gender" />
 		        
 		        <h:selectOneMenu id="gender" value="formApplicant.applicant.gender">
@@ -41,7 +36,11 @@
 		        <h:outputLabel value="Email address:" />
 		        <h:inputText value="#{formApplicant.applicant.email}" />
 		        
-		        <h:outputText value="#{formApplicant.applicant.id}" />
+		        <h:outputLabel value="Date of Birth:" />
+		        <h:inputText value="#{formApplicant.applicant.birthday}" />
+		        
+		        <br/>
+		       		        
 		        <h:commandButton value="Create" action="#{formApplicant.submit}" rendered="#{formApplicant.applicant.id == 0}" />
 		        <h:commandButton value="Update" action="#{formApplicant.submit}" rendered="#{formApplicant.applicant.id != 0}" />
 		    </h:form>		
