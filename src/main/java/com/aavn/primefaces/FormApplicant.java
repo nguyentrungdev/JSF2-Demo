@@ -1,8 +1,11 @@
 package com.aavn.primefaces;
 
 import java.io.Serializable;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
+import javax.faces.application.Application;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
@@ -41,15 +44,41 @@ public class FormApplicant implements Serializable{
 		this.applicant = applicant;
 	}
 	
+	public void setGraduateTime(int input) {
+		if (input > 0) {
+			if (input < 1000)
+				applicant.setYearOfExperience(input);
+			else if (input/1000 >= 1 && input/1000 <= 10) {
+				Calendar calendar = Calendar.getInstance();
+				calendar.set(Calendar.YEAR, input);
+				applicant.setGraduateTime(calendar.getTime());
+			}
+		}
+	}
+	
+	public Integer getGraduateTime() {
+		if (applicant.getYearOfExperience() > 0)
+			return applicant.getYearOfExperience();
+		if (applicant.getGraduateTime() != null) {
+			//return applicant.getGraduateTime().getYear() + 1900;
+			Calendar calendar = Calendar.getInstance();
+			calendar.setTime(applicant.getGraduateTime());
+			return calendar.get(Calendar.YEAR);
+		}
+		return null;
+	}
+	
 	public String submit() {
-		System.out.println("applicant: " + applicant.getFirstName());
-		System.out.println("applicant: " + applicant.getLastName());
-		System.out.println("gender: " + applicant.getGender());
-		applicant.setId(2);
+		applicant.setId(2); //assuming that we'd saved it to db and have the id
 		return "";
 	}
 	
 	public Gender[] getGenders() {
 		return Gender.values();
+	}
+	
+	public List<Skill> getSkills() {
+		System.out.println("get skills");
+		return Skill.getSkills();
 	}
 }

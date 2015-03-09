@@ -1,6 +1,7 @@
 package com.aavn.primefaces;
 
 import java.util.Date;
+import java.util.List;
 
 public class Applicant {
 	private int id;
@@ -15,7 +16,8 @@ public class Applicant {
 	private Boolean isFresher;
 	private String major;
 	private String university;
-	private String skills;
+	private Integer yearOfExperience;
+	private List<Skill> skills;
 	private Date graduateTime;
 	
 	public int getId() {
@@ -91,10 +93,16 @@ public class Applicant {
 	public void setUniversity(String university) {
 		this.university = university;
 	}
-	public String getSkills() {
+	public Integer getYearOfExperience() {
+		return yearOfExperience;
+	}
+	public void setYearOfExperience(Integer yearOfExperience) {
+		this.yearOfExperience = yearOfExperience;
+	}
+	public List<Skill> getSkills() {
 		return skills;
 	}
-	public void setSkills(String skills) {
+	public void setSkills(List<Skill> skills) {
 		this.skills = skills;
 	}
 	public Date getGraduateTime() {

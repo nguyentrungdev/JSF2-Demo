@@ -21,7 +21,7 @@
   </context-param> -->
   
   <welcome-file-list>
-      <welcome-file>index.jsf</welcome-file>
+      <welcome-file>page1.jsf</welcome-file>
   </welcome-file-list>
   
   <servlet>
