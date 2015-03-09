@@ -41,6 +41,7 @@ public class FormApplicant implements Serializable{
 	public String submit() {
 		System.out.println("applicant: " + applicant.getFirstName());
 		System.out.println("applicant: " + applicant.getLastName());
+		System.out.println("gender: " + applicant.getGender());
 		applicant.setId(2);
 		return "";
 	}

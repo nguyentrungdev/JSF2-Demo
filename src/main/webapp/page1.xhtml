@@ -6,6 +6,7 @@
 	    xmlns:f="http://java.sun.com/jsf/core"
 	    xmlns:c="http://java.sun.com/jsp/jstl/core">
 <h:head>
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
 </h:head>
 <h:body>
 	<ui:composition template="templates/common.xhtml">
@@ -30,15 +31,15 @@
 		        	<f:selectItems value="#{formApplicant.genders}" var="gender" itemValue="#{gender.id}" itemLabel="#{gender.label}" />
 		        </h:selectOneMenu>
 		        
-		        <h:outputLabel value="Last name:" />
+		        <h:outputLabel value="Last name:" /> 
 		        <h:inputText value="#{formApplicant.applicant.lastName}"/>
 		        
 		        <h:outputLabel value="Email address:" />
 		        <h:inputText value="#{formApplicant.applicant.email}" />
-		        
+		        <ui:remove>
 		        <h:outputLabel value="Date of Birth:" />
-		        <h:inputText value="#{formApplicant.applicant.birthday}" />
-		        
+		        <h:inputText value="#{formApplicant.applicant.dateOfBirth}" />
+		        </ui:remove>
 		        <br/>
 		       		        
 		        <h:commandButton value="Create" action="#{formApplicant.submit}" rendered="#{formApplicant.applicant.id == 0}" />

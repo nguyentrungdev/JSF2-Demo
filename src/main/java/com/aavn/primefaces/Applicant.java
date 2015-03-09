@@ -69,6 +69,18 @@ public class Applicant {
 	public void setEvent(Integer event) {
 		this.event = event;
 	}
+	public Boolean getIsFresher() {
+		return isFresher;
+	}
+	public void setIsFresher(Boolean isFresher) {
+		this.isFresher = isFresher;
+	}
+	public String getMajor() {
+		return major;
+	}
+	public void setMajor(String major) {
+		this.major = major;
+	}
 	
 
 }
