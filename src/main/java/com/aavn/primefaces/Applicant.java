@@ -14,6 +14,8 @@ public class Applicant {
 	private Integer event;
 	private Boolean isFresher;
 	private String major;
+	private String university;
+	private String skills;
 	
 	public int getId() {
 		return id;
@@ -81,5 +83,17 @@ public class Applicant {
 	}
 	public void setMajor(String major) {
 		this.major = major;
+	}
+	public String getUniversity() {
+		return university;
+	}
+	public void setUniversity(String university) {
+		this.university = university;
+	}
+	public String getSkills() {
+		return skills;
+	}
+	public void setSkills(String skills) {
+		this.skills = skills;
 	}
 }

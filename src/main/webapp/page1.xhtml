@@ -15,7 +15,7 @@
 			<h:form id="myForm" >
 		    	<c:set var="form" value="formApplicant" />
 		        <h1>
-		            <h:outputText value="ManagedBean example" ng-model="abc"/>
+		            <h:outputText value="Create New Applicant"/>
 		        </h1>
 		        <h2>
 		            <h:outputText value="Form example" />
@@ -31,8 +31,8 @@
 		        	<f:selectItems value="#{formApplicant.genders}" var="gender" itemValue="#{gender.id}" itemLabel="#{gender.label}" />
 		        </h:selectOneMenu>
 		        
-		        <h:outputLabel value="Last name:" /> 
-		        <h:inputText value="#{formApplicant.applicant.lastName}"/>
+		        <h:outputLabel value="Last name:" for="lastName"/> 
+		        <h:inputText id="lastName" value="#{formApplicant.applicant.lastName}"/>
 		        
 		        <h:outputLabel value="Email address:" />
 		        <h:inputText value="#{formApplicant.applicant.email}" />

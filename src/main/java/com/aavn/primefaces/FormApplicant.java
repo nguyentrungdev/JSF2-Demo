@@ -1,6 +1,7 @@
 package com.aavn.primefaces;
 
 import java.io.Serializable;
+import java.util.Date;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
@@ -24,8 +25,10 @@ public class FormApplicant implements Serializable{
         if (id != null) {
         	applicant = new Applicant();
         	applicant.setId(Integer.parseInt(id));
-        	if (id.equals("7"))
+        	if (id.equals("7")) {
         		applicant.setFirstName("Nguyễn Văn A");
+        		applicant.setBirthday(new Date());
+        	}
         } else 
         	applicant = new Applicant();
 	}
