@@ -36,11 +36,13 @@
 		        
 		        <h:outputLabel value="Email address:" />
 		        <h:inputText value="#{formApplicant.applicant.email}" />
-		        <ui:remove>
+		        
 		        <h:outputLabel value="Date of Birth:" />
-		        <h:inputText value="#{formApplicant.applicant.dateOfBirth}" />
-		        </ui:remove>
+		        <h:inputText id="birthday" value="#{formApplicant.applicant.birthday}" >
+		        	<f:convertDateTime pattern="MM-dd-yyyy" />
+		        </h:inputText>
 		        <br/>
+		        <h:message for="birthday" style="color:red" />
 		       		        
 		        <h:commandButton value="Create" action="#{formApplicant.submit}" rendered="#{formApplicant.applicant.id == 0}" />
 		        <h:commandButton value="Update" action="#{formApplicant.submit}" rendered="#{formApplicant.applicant.id != 0}" />
