@@ -16,6 +16,7 @@ public class Applicant {
 	private String major;
 	private String university;
 	private String skills;
+	private Date graduateTime;
 	
 	public int getId() {
 		return id;
@@ -95,5 +96,11 @@ public class Applicant {
 	}
 	public void setSkills(String skills) {
 		this.skills = skills;
+	}
+	public Date getGraduateTime() {
+		return graduateTime;
+	}
+	public void setGraduateTime(Date graduateTime) {
+		this.graduateTime = graduateTime;
 	}
 }
