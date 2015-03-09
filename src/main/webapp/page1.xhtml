@@ -27,7 +27,7 @@
 		        
 		        <h:outputLabel value="Gender" for="gender" />
 		        
-		        <h:selectOneMenu id="gender" value="formApplicant.applicant.gender">
+		        <h:selectOneMenu id="gender" value="#{formApplicant.applicant.gender}">
 		        	<f:selectItems value="#{formApplicant.genders}" var="gender" itemValue="#{gender.id}" itemLabel="#{gender.label}" />
 		        </h:selectOneMenu>
 		        
