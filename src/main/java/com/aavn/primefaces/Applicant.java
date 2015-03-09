@@ -8,7 +8,7 @@ public class Applicant {
 	private String lastName;
 	private Integer gender;
 	private String email;
-	private Date dateOfBirth;
+	private Date birthday;
 	private String skypeAccount;
 	private String phoneNumber;
 	private Integer event;
@@ -45,11 +45,12 @@ public class Applicant {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public Date getDateOfBirth() {
-		return dateOfBirth;
+	
+	public Date getBirthday() {
+		return birthday;
 	}
-	public void setDateOfBirth(Date birthday) {
-		this.dateOfBirth = birthday;
+	public void setBirthday(Date birthday) {
+		this.birthday = birthday;
 	}
 	public String getSkypeAccount() {
 		return skypeAccount;
@@ -81,6 +82,4 @@ public class Applicant {
 	public void setMajor(String major) {
 		this.major = major;
 	}
-	
-
 }
