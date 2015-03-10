@@ -48,20 +48,20 @@
 		        <h:outputLabel value="Major/Lastest Position:" />
 		        <h:inputText id="major" value="#{formApplicant.applicant.major}"/>
 		        
-		       <!--  <h:outputLabel for="graduateTime" value="Graduation Time/Year of Experience: " />
+		        <h:outputLabel for="graduateTime" value="Graduation Time/Year of Experience: " />
 		       	<h:inputText id="graduateTime" value="#{formApplicant.graduateTime}">
 		       		<f:convertNumber minIntegerDigits="1" maxIntegerDigits="4" type="number"/>
 		       	</h:inputText>
-		       	<br/> -->
+		       	<br/>
 		       	
-		       	<!-- <h:outputLabel for="skills" value="#{formApplicant.applicant.skills}" />
-		       	<h:selectManyCheckbox id="skills" value="#{formApplicant.applicant.skills}">
-		       		<f:selectItems value="formApplicant.skills" var="skill" itemValue="skill.id" itemLabel="skill.label"/>
-		       	</h:selectManyCheckbox> -->
+		       	<h:outputLabel for="skills" value="#{formApplicant.applicant.skills}" />
+		       	<h:selectManyCheckbox id="skills" > <!-- value="#{formApplicant.applicant.skills}" -->
+		       		<f:selectItems value="#{formApplicant.skills}" var="skill" itemValue="#{skill.id}" itemLabel="#{skill.label}"/>
+		       	</h:selectManyCheckbox>
 		       
 		        <h:commandButton value="Create" action="#{formApplicant.submit}" rendered="#{formApplicant.applicant.id == 0}" />
 		        <h:commandButton value="Update" action="#{formApplicant.submit}" rendered="#{formApplicant.applicant.id != 0}" />
-		    </h:form>		
+		    </h:form>
 		</ui:define>
 	</ui:composition>
 </h:body>

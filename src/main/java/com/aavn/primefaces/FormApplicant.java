@@ -5,7 +5,6 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
-import javax.faces.application.Application;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
@@ -44,8 +43,9 @@ public class FormApplicant implements Serializable{
 		this.applicant = applicant;
 	}
 	
-	public void setGraduateTime(int input) {
-		if (input > 0) {
+	public void setGraduateTime(Integer input) {
+		System.out.println("formApplicant:setGraduateTime");
+		if (input >= 0) {
 			if (input < 1000)
 				applicant.setYearOfExperience(input);
 			else if (input/1000 >= 1 && input/1000 <= 10) {
@@ -57,8 +57,12 @@ public class FormApplicant implements Serializable{
 	}
 	
 	public Integer getGraduateTime() {
-		if (applicant.getYearOfExperience() > 0)
+		System.out.println("formApplicant:getGraduateTime");
+		System.out.println(applicant.getYearOfExperience());
+		System.out.println(applicant.getGraduateTime());
+		if (applicant.getYearOfExperience() !=null && applicant.getYearOfExperience() > 0)
 			return applicant.getYearOfExperience();
+		
 		if (applicant.getGraduateTime() != null) {
 			//return applicant.getGraduateTime().getYear() + 1900;
 			Calendar calendar = Calendar.getInstance();
@@ -70,6 +74,9 @@ public class FormApplicant implements Serializable{
 	
 	public String submit() {
 		applicant.setId(2); //assuming that we'd saved it to db and have the id
+		//for test
+		System.out.println("graduateTime: " + applicant.getGraduateTime());
+		System.out.println("yearOfExperience: " + applicant.getYearOfExperience());
 		return "";
 	}
 	
@@ -78,7 +85,7 @@ public class FormApplicant implements Serializable{
 	}
 	
 	public List<Skill> getSkills() {
-		System.out.println("get skills");
+		System.out.println("FormApplicant: get skills");
 		return Skill.getSkills();
 	}
 }

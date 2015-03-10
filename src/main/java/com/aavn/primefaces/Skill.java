@@ -5,7 +5,6 @@ import java.util.List;
 
 public class Skill {
 	private int id;
-	private String value;
 	private String label;
 	
 	public int getId() {
@@ -13,12 +12,6 @@ public class Skill {
 	}
 	public void setId(int id) {
 		this.id = id;
-	}
-	public String getValue() {
-		return value;
-	}
-	public void setValue(String value) {
-		this.value = value;
 	}
 	public String getLabel() {
 		return label;
@@ -35,7 +28,7 @@ public class Skill {
 	}
 	
 	public static List<Skill> getSkills() {
-		List<Skill> skills = new ArrayList<Skill>(7);
+		List<Skill> skills = new ArrayList<Skill>();
 		skills.add(new Skill(1, "Java"));
 		skills.add(new Skill(2, ".Net"));
 		skills.add(new Skill(3, ".PHP"));
